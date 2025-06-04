@@ -4,7 +4,10 @@ import ExperienceCard from "@/components/ExperienceCard.vue"
 </script>
 
 <template>
-    <div class="portfolioView">
+    <div class="portfolioIntro">
+        
+    </div>
+    <div class="portfolioExperience">
         <ExperienceCard employer="Current Lighting Solutions" title="Software Developer (Intern)" location="Beachwood, OH" dateOfEmployment="May 2024 - August 2024">
             <ul class="ecList">
                 <li>Develop Python software for factories to configure LED drivers over DALI interface</li>
@@ -27,7 +30,7 @@ import ExperienceCard from "@/components/ExperienceCard.vue"
 
 <style scoped>
 
-div.portfolioView {
+div.portfolioExperience {
     padding: 24px;
 }
 
