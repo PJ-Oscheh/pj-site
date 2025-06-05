@@ -35,6 +35,7 @@ div.experienceCard {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 24px;
     padding: 12px;
 }
 
