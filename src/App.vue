@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
-      <nav>
+      <nav class="appNavigation">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
@@ -16,5 +16,9 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+
+nav.appNavigation {
+  height: 5dvh;
+}
 
 </style>

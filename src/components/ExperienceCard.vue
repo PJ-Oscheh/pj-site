@@ -36,6 +36,7 @@ div.experienceCard {
     margin-left: auto;
     margin-right: auto;
     padding: 12px;
+    margin-bottom: 700px;
 }
 
 div.experienceInfo {
@@ -48,7 +49,7 @@ h1.employerName {
 }
 
 h2.jobTitle {
-    color: #005dce;
+    color: var(--accent);
     margin: 6px;
 }
 

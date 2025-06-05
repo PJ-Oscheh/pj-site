@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import ExperienceCard from "@/components/ExperienceCard.vue"
+import ExperienceCard from "@/components/ExperienceCard.vue";
+import IntroCard from "@/components/IntroCard.vue";
+import { useTemplateRef } from "vue";
+
+const experienceSection = useTemplateRef("experienceSection");
 
 </script>
 
 <template>
     <div class="portfolioIntro">
-        
+        <IntroCard headline="Welcome to my site!" photo="../../public/pj.jpg" nextRef="experienceSection">
+                Hey there! I'm PJ Oschmann, a recent graduate of Baldwin Wallace University and an up-and-coming software developer seeking an
+                entry-level opportunity to solve real-world problems. I have experience in full-stack software development, IoT programming, and software testing.
+        </IntroCard>
     </div>
-    <div class="portfolioExperience">
+    <div ref="experienceSection" class="portfolioExperience">
+        <h1 class="sectionHeader">Experience</h1>
         <ExperienceCard employer="Current Lighting Solutions" title="Software Developer (Intern)" location="Beachwood, OH" dateOfEmployment="May 2024 - August 2024">
             <ul class="ecList">
                 <li>Develop Python software for factories to configure LED drivers over DALI interface</li>
@@ -32,6 +40,12 @@ import ExperienceCard from "@/components/ExperienceCard.vue"
 
 div.portfolioExperience {
     padding: 24px;
+    background-color: #f9f9f9;
+}
+
+h1.sectionHeader {
+    text-align: center;
+    font-size: 36pt;
 }
 
 </style>
