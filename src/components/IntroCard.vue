@@ -1,20 +1,25 @@
 <script setup lang="ts">
 import { getCurrentInstance, onMounted } from 'vue';
 
-
-
-
-
 const props = defineProps<{
     headline: string,
     photo: string,
     nextRef: string
 }>();
 
+let experienceSection: HTMLElement | null = null;
 
 onMounted(() => {
-    const experienceSection = getCurrentInstance()?.parent?.refs[props.nextRef];
+    const retVal = getCurrentInstance()?.parent?.refs[props.nextRef];
+    
+    if (typeof retVal === 'object') {
+        experienceSection = <HTMLElement>retVal;
+    }
 });
+
+function scrollToRef(destRef: HTMLElement): void {
+    destRef.scrollIntoView({behavior: 'smooth'});
+}
 
 </script>
 
@@ -26,6 +31,8 @@ onMounted(() => {
             <slot></slot>
         </div>
         <img class="headshotPhoto" :src="photo" />
+
+        <button @click="experienceSection != null ? scrollToRef(experienceSection) : () => {}">Scrolly</button>
     </div>
 </template>
 

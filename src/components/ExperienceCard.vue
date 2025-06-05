@@ -36,7 +36,6 @@ div.experienceCard {
     margin-left: auto;
     margin-right: auto;
     padding: 12px;
-    margin-bottom: 700px;
 }
 
 div.experienceInfo {

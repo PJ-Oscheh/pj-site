@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import ExperienceCard from "@/components/ExperienceCard.vue";
 import IntroCard from "@/components/IntroCard.vue";
-import { useTemplateRef } from "vue";
-
-const experienceSection = useTemplateRef("experienceSection");
 
 </script>
 
