@@ -4,7 +4,8 @@ import { getCurrentInstance, onMounted } from 'vue';
 const props = defineProps<{
     headline: string,
     photo: string,
-    nextRef: string
+    nextRef: string,
+    btnScrollText: string
 }>();
 
 let experienceSection: HTMLElement | null = null;
@@ -17,8 +18,14 @@ onMounted(() => {
     }
 });
 
-function scrollToRef(destRef: HTMLElement): void {
-    destRef.scrollIntoView({behavior: 'smooth'});
+function scrollToRef(destRef: HTMLElement | null): void {
+    if (destRef !== null) {
+        destRef.scrollIntoView({behavior: 'smooth'});
+    }
+    else {
+        console.log(`Can't scroll - '${destRef}' is null.`)
+    }
+    
 }
 
 </script>
@@ -32,16 +39,16 @@ function scrollToRef(destRef: HTMLElement): void {
         </div>
         <img class="headshotPhoto" :src="photo" />
 
-        <button @click="experienceSection != null ? scrollToRef(experienceSection) : () => {}">Scrolly</button>
+        <button class="btnScroll" @click="scrollToRef(experienceSection)">{{ btnScrollText }} -></button>
     </div>
 </template>
 
 <style scoped>
 
 div.introCard {
-    padding: 60px;
+    padding: 5dvh;
     background-color: #ffffff;
-    min-height: 60dvh;
+    min-height: 85dvh;
 }
 
 h1.headline {
@@ -76,6 +83,26 @@ img.headshotPhoto {
     height: 400px;
     border-radius: 100%;
     box-shadow: 0px 0px 12px #868686;
+}
+
+button.btnScroll {
+    display: block;
+    margin-top: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    border: none;
+    background-color: var(--accent);
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 3px var(--accent-shadow);
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+button.btnScroll:active {
+    transform: translate(0px, 2px);
+    box-shadow: none;
 }
 
 

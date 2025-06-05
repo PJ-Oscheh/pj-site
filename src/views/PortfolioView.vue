@@ -6,7 +6,7 @@ import IntroCard from "@/components/IntroCard.vue";
 
 <template>
     <div class="portfolioIntro">
-        <IntroCard headline="Welcome to my site!" photo="../../public/pj.jpg" nextRef="experienceSection">
+        <IntroCard headline="Welcome to my site!" photo="../../public/pj.jpg" nextRef="experienceSection" btnScrollText="See My Experience">
                 Hey there! I'm PJ Oschmann, a recent graduate of Baldwin Wallace University and an up-and-coming software developer seeking an
                 entry-level opportunity to solve real-world problems. I have experience in full-stack software development, IoT programming, and software testing.
         </IntroCard>
