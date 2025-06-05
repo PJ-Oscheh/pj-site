@@ -1,10 +1,29 @@
 <script setup lang="ts">
 import ExperienceCard from "@/components/ExperienceCard.vue";
 import IntroCard from "@/components/IntroCard.vue";
+import NavigationBar from '@/components/NavigationBar.vue';
+import type { SecLink } from "@/interfaces/interfaces";
+import { onMounted, ref, useTemplateRef, type Ref, type ShallowRef } from "vue";
+
+const refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>> = useTemplateRef("experienceSection");
+
+let id = 0;
+const links: Ref<SecLink[] | null> = ref(null);
+
+onMounted(() => {
+    links.value = [{ refSection: null, displayText: "Home", id: id++}, {refSection: refExperienceSection.value, displayText: "Experience", id: id++}];
+});
+
+defineExpose<{
+    refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>>;
+}>();
+
+console.log(refExperienceSection);
 
 </script>
 
 <template>
+    <NavigationBar :links="links ?? []"></NavigationBar>
     <div class="portfolioIntro">
         <IntroCard headline="Welcome to my site!" photo="../../public/pj.jpg" nextRef="experienceSection" btnScrollText="See My Experience">
                 Hey there! I'm PJ Oschmann, a recent graduate of Baldwin Wallace University and an up-and-coming software developer seeking an

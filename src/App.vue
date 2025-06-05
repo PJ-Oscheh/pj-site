@@ -1,24 +1,21 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+
 </script>
 
 <template>
   <header>
     <div class="wrapper">
-      <nav class="appNavigation">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+
     </div>
   </header>
 
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <component :is="Component" ref="rviewComponent"/>
+  </RouterView>
 </template>
 
 <style scoped>
 
-nav.appNavigation {
-  height: 5dvh;
-}
 
 </style>

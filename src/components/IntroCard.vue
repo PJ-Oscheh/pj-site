@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getCurrentInstance, onMounted } from 'vue';
+import { scrollToRef } from '@/common/utils';
 
 const props = defineProps<{
     headline: string,
@@ -18,15 +19,7 @@ onMounted(() => {
     }
 });
 
-function scrollToRef(destRef: HTMLElement | null): void {
-    if (destRef !== null) {
-        destRef.scrollIntoView({behavior: 'smooth'});
-    }
-    else {
-        console.log(`Can't scroll - '${destRef}' is null.`)
-    }
-    
-}
+
 
 </script>
 
