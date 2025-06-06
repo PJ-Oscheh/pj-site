@@ -29,6 +29,7 @@ console.log(refExperienceSection);
 
 <template>
     <NavigationBar :links="links ?? []"></NavigationBar>
+
     <div class="portfolioIntro">
         <IntroCard headline="Welcome to my site!" 
         photo="../../public/pj.jpg" 
@@ -114,7 +115,9 @@ console.log(refExperienceSection);
         </ul>
         </ExperienceCard>
     </div>
+
     <div ref="educationSection" class="portfolioEducation">
+        
         <h1 class="sectionHeader">Education</h1>
         <ExperienceCard employer="Baldwin Wallace University"
         title="BS, Software Engineering"
@@ -124,7 +127,11 @@ console.log(refExperienceSection);
             2025 with a major in Software Engineering and a minor in Asian Studies.
         </p>
         </ExperienceCard>
-        <h2 class="subsectionHeader" @click="isShowingAdditionalEducation = !isShowingAdditionalEducation">{{ isShowingAdditionalEducation ? '▾' : '▸' }} Additional Education</h2>
+        
+        <h2 class="subsectionHeader clickable" 
+        @click="isShowingAdditionalEducation = !isShowingAdditionalEducation">
+            {{ isShowingAdditionalEducation ? '▾' : '▸' }} Additional Education
+        </h2>
         <div class="additionalEducation" v-if="isShowingAdditionalEducation">
             <ExperienceCard employer="Kansai Gaidai University"
         location="Online"
@@ -141,11 +148,16 @@ console.log(refExperienceSection);
                 Northern University, originally studying Computer Science.
             </p>
         </ExperienceCard>
+
         </div>
     </div>
 </template>
 
 <style scoped>
+
+div.portfolioIntro {
+    margin-top: 120px;
+}
 
 div.portfolioExperience {
     padding: 24px;
@@ -160,6 +172,10 @@ h1.sectionHeader {
 h2.subsectionHeader {
     text-align: center;
     margin-top: 48px;
+}
+
+h2.clickable:hover {
+    color: var(--accent);
 }
 
 </style>

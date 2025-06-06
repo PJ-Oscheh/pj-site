@@ -1,14 +1,37 @@
 <script setup lang="ts">
 import type { SecLink } from '@/interfaces/interfaces'
 import { scrollToRef } from '@/common/utils';
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 const props = defineProps<{
     links: SecLink[]
 }>();
+
+onMounted(() => {
+    window.addEventListener("scroll", changeNavBarColor);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener("scroll", changeNavBarColor);
+});
+
+const scrollPosition = ref(window.scrollY);
+
+const navBarBgColor = ref("#ffffff");
+
+watch(scrollPosition, () => {
+    navBarBgColor.value = scrollPosition.value == 0 ? "#ffffff" : "#f5f5f5";
+    console.log(`Scroll position is ${scrollPosition.value}`);
+});
+
+function changeNavBarColor(): void {
+    navBarBgColor.value = window.scrollY == 0 ? "#ffffff" : "#f5f5f5";
+}
+
 </script>
 
 <template>
-    <nav class="navBar">
+    <nav class="navBar" @scroll="changeNavBarColor">
         <ul class="navList">
             <li class="navItem" v-for="link in props.links" :key="link.id">
                 <a @click="scrollToRef(link.refSection)">{{ link.displayText }}</a>
@@ -21,14 +44,17 @@ const props = defineProps<{
 
 nav.navBar {
     display: block;
+    position: fixed;
+    width: 100dvw;
     min-height: 0;
+    top: 0;
 }
 
 ul.navList {
     display: block;
     margin: 0px;
     padding: 0px;
-    background-color: #f5f5f5;
+    background-color: v-bind(navBarBgColor);
 }
 
 li.navItem {
