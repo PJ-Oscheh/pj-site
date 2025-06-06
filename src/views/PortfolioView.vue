@@ -5,8 +5,10 @@ import NavigationBar from '@/components/NavigationBar.vue';
 import type { SecLink } from "@/interfaces/interfaces";
 import { onMounted, ref, useTemplateRef, type Ref, type ShallowRef } from "vue";
 
-const refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>> = 
-    useTemplateRef("experienceSection");
+const refIntroSection = useTemplateRef("introSection");
+const refExperienceSection = useTemplateRef("experienceSection");
+const refEducationSection = useTemplateRef("educationSection");
+
 
 let id = 0;
 const links: Ref<SecLink[] | null> = ref(null);
@@ -15,8 +17,10 @@ const isShowingAdditionalEducation = ref(false);
 
 onMounted(() => {
     links.value = [
-        { refSection: null, displayText: "Home", id: id++},
-        {refSection: refExperienceSection.value, displayText: "Experience", id: id++}];
+        { refSection: refIntroSection.value, displayText: "Home", id: id++},
+        {refSection: refExperienceSection.value, displayText: "Experience", id: id++},
+        {refSection: refEducationSection.value, displayText: "Education", id: id++}
+    ];
 });
 
 defineExpose<{
@@ -30,7 +34,7 @@ console.log(refExperienceSection);
 <template>
     <NavigationBar :links="links ?? []"></NavigationBar>
 
-    <div class="portfolioIntro">
+    <div ref="introSection" class="portfolioIntro">
         <IntroCard headline="Welcome to my site!" 
         photo="../../public/pj.jpg" 
         nextRef="experienceSection"
@@ -151,6 +155,10 @@ console.log(refExperienceSection);
 
         </div>
     </div>
+
+    <div ref="contactSection" class="portfolioContact">
+
+    </div>
 </template>
 
 <style scoped>
@@ -173,6 +181,8 @@ h2.subsectionHeader {
     text-align: center;
     margin-top: 48px;
 }
+
+
 
 h2.clickable:hover {
     color: var(--accent);
