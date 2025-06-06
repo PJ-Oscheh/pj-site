@@ -15,19 +15,11 @@ onBeforeUnmount(() => {
     window.removeEventListener("scroll", changeNavBarColor);
 });
 
-const scrollPosition = ref(window.scrollY);
-
 const navBarBgColor = ref("#ffffff");
-
-watch(scrollPosition, () => {
-    navBarBgColor.value = scrollPosition.value == 0 ? "#ffffff" : "#f5f5f5";
-    console.log(`Scroll position is ${scrollPosition.value}`);
-});
 
 function changeNavBarColor(): void {
     navBarBgColor.value = window.scrollY == 0 ? "#ffffff" : "#f5f5f5";
 }
-
 </script>
 
 <template>
