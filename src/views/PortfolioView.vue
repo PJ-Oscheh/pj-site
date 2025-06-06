@@ -124,7 +124,6 @@ console.log(refExperienceSection);
         </ExperienceCard>
         <h2 class="subsectionHeader">Additional Education</h2>
         <ExperienceCard employer="Ohio Northern University"
-        title="Computer Science Student"
         location="Ada, OH"
         dateOfEmployment="August 2021 - May 2022">
             <p class="ecParagraph">
@@ -133,7 +132,6 @@ console.log(refExperienceSection);
             </p>
         </ExperienceCard>
         <ExperienceCard employer="Kansai Gaidai University"
-        title="Japanese 1 Student"
         location="Online"
         dateOfEmployment="June 2024 - July 2024">
             <p>During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part

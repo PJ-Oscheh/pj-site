@@ -2,7 +2,7 @@
 
 const props = defineProps<{
     employer: string,
-    title: string,
+    title?: string,
     location: string,
     dateOfEmployment: string
 }>();
