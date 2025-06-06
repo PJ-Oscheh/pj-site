@@ -111,8 +111,35 @@ console.log(refExperienceSection);
             <li>Write C# program to generate Microsoft Word runbook using OpenXML SDK</li>
         </ul>
         </ExperienceCard>
-
-
+    </div>
+    <div ref="educationSection" class="portfolioEducation">
+        <h1 class="sectionHeader">Education</h1>
+        <ExperienceCard employer="Baldwin Wallace University"
+        title="BS, Software Engineering"
+        location="Berea, OH"
+        dateOfEmployment="August 2022 - May 2025">
+        <p class="ecParagraph">I graduated <i>magna cum laude</i> from Baldwin Wallace University in
+            2025 with a major in Software Engineering and a minor in Asian Studies.
+        </p>
+        </ExperienceCard>
+        <h2 class="subsectionHeader">Additional Education</h2>
+        <ExperienceCard employer="Ohio Northern University"
+        title="Computer Science Student"
+        location="Ada, OH"
+        dateOfEmployment="August 2021 - May 2022">
+            <p class="ecParagraph">
+                Before transferring to Baldwin Wallace, I began my college education at Ohio
+                Northern University, originally studying Computer Science.
+            </p>
+        </ExperienceCard>
+        <ExperienceCard employer="Kansai Gaidai University"
+        title="Japanese 1 Student"
+        location="Online"
+        dateOfEmployment="June 2024 - July 2024">
+            <p>During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part
+                of my Asian Studies minor.
+            </p>
+        </ExperienceCard>
     </div>
 </template>
 
@@ -126,6 +153,11 @@ div.portfolioExperience {
 h1.sectionHeader {
     text-align: center;
     font-size: 36pt;
+}
+
+h2.subsectionHeader {
+    text-align: center;
+    margin-top: 48px;
 }
 
 </style>
