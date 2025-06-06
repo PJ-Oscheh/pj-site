@@ -9,3 +9,9 @@ export interface SecLink {
     displayText: string,
     id: number
 }
+
+export interface ContactInfo {
+    icon: string,
+    displayText: string,
+    id: number
+}

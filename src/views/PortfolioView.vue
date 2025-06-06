@@ -1,19 +1,10 @@
 <script setup lang="ts">
+import ContactCard from "@/components/ContactCard.vue";
 import ExperienceCard from "@/components/ExperienceCard.vue";
 import IntroCard from "@/components/IntroCard.vue";
 import NavigationBar from '@/components/NavigationBar.vue';
-import type { SecLink } from "@/interfaces/interfaces";
+import type { SecLink, ContactInfo } from "@/interfaces/interfaces";
 import { onMounted, ref, useTemplateRef, type Ref, type ShallowRef } from "vue";
-
-const refIntroSection = useTemplateRef("introSection");
-const refExperienceSection = useTemplateRef("experienceSection");
-const refEducationSection = useTemplateRef("educationSection");
-
-
-let id = 0;
-const links: Ref<SecLink[] | null> = ref(null);
-
-const isShowingAdditionalEducation = ref(false);
 
 onMounted(() => {
     links.value = [
@@ -27,7 +18,34 @@ defineExpose<{
     refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>>;
 }>();
 
-console.log(refExperienceSection);
+
+const refIntroSection = useTemplateRef("introSection");
+const refExperienceSection = useTemplateRef("experienceSection");
+const refEducationSection = useTemplateRef("educationSection");
+
+let id = 0;
+const links: Ref<SecLink[] | null> = ref(null);
+
+const isShowingAdditionalEducation = ref(false);
+
+let contactId = 0;
+const contactLinks : ContactInfo[] = [
+    {
+        icon: "✉️",
+        displayText: "pj.oschmann@pm.me",
+        id: contactId++
+    },
+    {
+        icon: "☎️",
+        displayText: "(216) 856-5979",
+        id: contactId++
+    },
+    {
+        icon: "IN",
+        displayText: "linkedin.com/in/pj-oschmann",
+        id: contactId++
+    }
+]
 
 </script>
 
@@ -157,12 +175,14 @@ console.log(refExperienceSection);
     </div>
 
     <div ref="contactSection" class="portfolioContact">
-
+        <ContactCard :contact-items="contactLinks" />
     </div>
 </template>
 
 <style scoped>
 
+
+/* Section Styling */
 div.portfolioIntro {
     margin-top: 120px;
 }
@@ -171,6 +191,13 @@ div.portfolioExperience {
     padding: 24px;
     background-color: #f9f9f9;
 }
+
+div.portfolioContact {
+    background-color: var(--accent);
+    margin: 0px;
+}
+
+/* Header Styling */
 
 h1.sectionHeader {
     text-align: center;
@@ -182,7 +209,12 @@ h2.subsectionHeader {
     margin-top: 48px;
 }
 
-
+h2.clickable {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 h2.clickable:hover {
     color: var(--accent);
