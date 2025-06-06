@@ -11,6 +11,8 @@ const refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>> =
 let id = 0;
 const links: Ref<SecLink[] | null> = ref(null);
 
+const isShowingAdditionalEducation = ref(false);
+
 onMounted(() => {
     links.value = [
         { refSection: null, displayText: "Home", id: id++},
@@ -122,7 +124,15 @@ console.log(refExperienceSection);
             2025 with a major in Software Engineering and a minor in Asian Studies.
         </p>
         </ExperienceCard>
-        <h2 class="subsectionHeader">Additional Education</h2>
+        <h2 class="subsectionHeader" @click="isShowingAdditionalEducation = !isShowingAdditionalEducation">{{ isShowingAdditionalEducation ? '▾' : '▸' }} Additional Education</h2>
+        <div class="additionalEducation" v-if="isShowingAdditionalEducation">
+            <ExperienceCard employer="Kansai Gaidai University"
+        location="Online"
+        dateOfEmployment="June 2024 - July 2024">
+            <p>During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part
+                of my Asian Studies minor.
+            </p>
+        </ExperienceCard>
         <ExperienceCard employer="Ohio Northern University"
         location="Ada, OH"
         dateOfEmployment="August 2021 - May 2022">
@@ -131,13 +141,7 @@ console.log(refExperienceSection);
                 Northern University, originally studying Computer Science.
             </p>
         </ExperienceCard>
-        <ExperienceCard employer="Kansai Gaidai University"
-        location="Online"
-        dateOfEmployment="June 2024 - July 2024">
-            <p>During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part
-                of my Asian Studies minor.
-            </p>
-        </ExperienceCard>
+        </div>
     </div>
 </template>
 
