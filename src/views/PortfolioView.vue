@@ -175,6 +175,7 @@ const contactLinks : ContactInfo[] = [
     </div>
 
     <div ref="contactSection" class="portfolioContact">
+        <h1 class="sectionHeader" id="contactHeader">Contact</h1>
         <ContactCard :contact-items="contactLinks" />
     </div>
 </template>
@@ -195,6 +196,7 @@ div.portfolioExperience {
 div.portfolioContact {
     background-color: var(--accent);
     margin: 0px;
+    overflow: auto; /* TODO: check me */
 }
 
 /* Header Styling */
@@ -218,6 +220,11 @@ h2.clickable {
 
 h2.clickable:hover {
     color: var(--accent);
+}
+
+/* id-based overrides */
+h1.sectionHeader#contactHeader {
+    color: #ffffff;
 }
 
 </style>
