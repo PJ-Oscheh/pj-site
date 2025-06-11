@@ -45,18 +45,24 @@ div.experienceInfo {
 }
 
 h1.employerName {
-    margin: 6px;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    line-height: 1em;
     font-size: 2.5em;
 }
 
 h2.jobTitle {
     color: var(--accent);
-    margin: 6px;
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+    line-height: 1em;
     font-size: 2em;
 }
 
 span.workLocation {
-    margin-left: 6px;
+    margin-left: 0.5rem;
 }
 
 /* Separates work location & date of employment */
@@ -78,10 +84,14 @@ span.workLocation, span.dateOfEmployment, span.divider {
 :slotted(ul.ecList li) {
     margin: 0px;
     font-size: 1.5em;
+    line-height: 1.25em;
 }
 
 :slotted(p.ecParagraph) {
     font-size: 1.5em;
+    line-height: 1em;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 </style>

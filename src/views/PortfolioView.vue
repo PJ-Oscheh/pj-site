@@ -219,11 +219,14 @@ div.portfolioContact {
 h1.sectionHeader {
     text-align: center;
     font-size: 5em;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 h2.subsectionHeader {
     text-align: center;
     margin-top: 48px;
+    font-size: 2em;
 }
 
 h2.clickable {

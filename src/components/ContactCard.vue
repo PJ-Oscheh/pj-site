@@ -12,7 +12,8 @@ const props = defineProps<{
     <div class="contactCard">
         <ul class="ccList">
             <li v-for="item in props.contactItems" :key="item.id">
-                {{ item.icon }}
+
+                <span class="iconPrefix">{{ item.icon }}</span>
                 <a class="clickLink" :href="item.clickLink">
                     {{ item.displayText }}
                 </a>
@@ -54,6 +55,11 @@ a.clickLink {
 span.clickLinkDivider {
     margin-left: 0.5rem;
     margin-right: 0.25rem;
+}
+
+span.iconPrefix {
+    font-size: 0.7em;
+    margin-right: 0.125rem;
 }
 
 @media only screen and (max-width: 800px) {
