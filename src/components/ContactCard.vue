@@ -12,7 +12,7 @@ const props = defineProps<{
     <div class="contactCard">
         <ul class="ccList">
             <li v-for="item in props.contactItems" :key="item.id">
-                {{ item.icon }}: {{ item.displayText }}
+                {{ item.icon }} <a class="clickLink" :href="item.clickLink">{{ item.displayText }}</a>
             </li>
         </ul>
     </div>
@@ -38,6 +38,10 @@ ul.ccList {
 
 ul.ccList > li {
     font-size: 14pt;
+}
+
+a.clickLink {
+    color: #ffffff;
 }
 
 </style>

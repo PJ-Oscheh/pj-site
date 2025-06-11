@@ -13,5 +13,6 @@ export interface SecLink {
 export interface ContactInfo {
     icon: string,
     displayText: string,
+    clickLink: string,
     id: number
 }

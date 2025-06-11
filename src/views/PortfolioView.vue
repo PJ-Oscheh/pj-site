@@ -33,16 +33,26 @@ const contactLinks : ContactInfo[] = [
     {
         icon: "✉️",
         displayText: "pj.oschmann@pm.me",
-        id: contactId++
+        clickLink: "mailto:pj.oschmann@pm.me",
+        id: contactId++,
     },
     {
         icon: "☎️",
         displayText: "(216) 856-5979",
+        clickLink: "tel:2168565979",
+        id: contactId++,
+
+    },
+    {
+        icon: "🔗",
+        displayText: "linkedin.com/in/pj-oschmann",
+        clickLink: "https://linkedin.com/in/pj-oschmann",
         id: contactId++
     },
     {
-        icon: "IN",
-        displayText: "linkedin.com/in/pj-oschmann",
+        icon: "💻",
+        displayText: "github.com/PJ-Oscheh",
+        clickLink: "https://github.com/PJ-Oscheh",
         id: contactId++
     }
 ]
@@ -191,6 +201,7 @@ div.portfolioIntro {
 div.portfolioExperience {
     padding: 24px;
     background-color: #f9f9f9;
+    overflow: auto;
 }
 
 div.portfolioContact {
