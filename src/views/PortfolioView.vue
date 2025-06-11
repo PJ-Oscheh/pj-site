@@ -10,7 +10,8 @@ onMounted(() => {
     links.value = [
         { refSection: refIntroSection.value, displayText: "Home", id: id++},
         {refSection: refExperienceSection.value, displayText: "Experience", id: id++},
-        {refSection: refEducationSection.value, displayText: "Education", id: id++}
+        {refSection: refEducationSection.value, displayText: "Education", id: id++},
+        {refSection: refContactSection.value, displayText: "Contact", id: id++}
     ];
 });
 
@@ -18,6 +19,7 @@ onMounted(() => {
 const refIntroSection = useTemplateRef("introSection");
 const refExperienceSection = useTemplateRef("experienceSection");
 const refEducationSection = useTemplateRef("educationSection");
+const refContactSection = useTemplateRef("contactSection");
 
 let id = 0;
 const links: Ref<SecLink[] | null> = ref(null);
