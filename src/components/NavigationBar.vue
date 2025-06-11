@@ -120,12 +120,14 @@ li#liPageTitle {
     margin-left: 0.5rem;
     vertical-align: middle;
     font-size: 1.7em;
+    margin-top: 0.3rem;
 }
 
 span.hLine {
     display: block;
     height: 4px;
-    width: 36px;
+    width: 30px;
+    margin-top: 6px;
     margin-bottom: 6px;
     background-color: #000000;
     border-radius: 6px;
@@ -136,6 +138,11 @@ button.btnMenu {
     text-align: right;
     border: none;
     background-color: transparent;
+}
+
+button.btnMenu:active {
+    background-color: #0000003b;
+    border-radius: 100%;
 }
 
 
