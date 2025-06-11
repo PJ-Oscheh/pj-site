@@ -97,8 +97,4 @@ button.btnScroll:active {
     box-shadow: none;
 }
 
-span#btnScrollText {
-    font-family: "Zain";
-}
-
 </style>
