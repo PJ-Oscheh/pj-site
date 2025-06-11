@@ -3,6 +3,7 @@ import type { SecLink } from '@/interfaces/interfaces'
 import { scrollToRef } from '@/common/utils';
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
+const SCROLL_OFFSET = 60;
 const SCROLL_THRESHOLD = 36;
 const NAVBAR_SHADOW_CSS = "0px 2px 6px #6e6e6e"
 
@@ -48,7 +49,9 @@ function changeNavBarColorAndState(): void {
 
         <ul class="navList">
             <li class="navItem" v-for="link in props.links" :key="link.id">
-                <a @click="scrollToRef(link.refSection)">{{ link.displayText }}</a>
+                <a @click="scrollToRef(link.refSection)">
+                    {{ link.displayText }}
+                </a>
             </li>
         </ul>
     </nav>

@@ -1,4 +1,4 @@
-import { SCROLL_OFFSET } from './constants.ts';
+const SCROLL_OFFSET = 60;
 
 export function scrollToRef(destRef: HTMLElement | null): void {
     if (destRef !== null) {
