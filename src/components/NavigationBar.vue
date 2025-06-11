@@ -1,31 +1,36 @@
 <script setup lang="ts">
 import type { SecLink } from '@/interfaces/interfaces'
 import { scrollToRef } from '@/common/utils';
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 const props = defineProps<{
     links: SecLink[]
 }>();
 
-const mobileMenuShown = ref(false);
-
 onMounted(() => {
-    window.addEventListener("scroll", changeNavBarColor);
+    window.addEventListener("scroll", changeNavBarColorAndState);
 });
 
 onBeforeUnmount(() => {
-    window.removeEventListener("scroll", changeNavBarColor);
+    window.removeEventListener("scroll", changeNavBarColorAndState);
 });
 
 const navBarBgColor = ref("#ffffff");
 
-function changeNavBarColor(): void {
-    navBarBgColor.value = window.scrollY == 0 ? "#ffffff" : "#f5f5f5";
+const mobileMenuShown = ref(false);
+const mobileMenuDisplay = computed(() => mobileMenuShown.value ? "block" : "none");
+
+function changeNavBarColorAndState(): void {
+    navBarBgColor.value = window.scrollY <= 16 ? "#ffffff" : "#f5f5f5";
+
+    if (mobileMenuShown.value) {
+        mobileMenuShown.value = false;
+    }
 }
 </script>
 
 <template>
-    <nav class="navBar" @scroll="changeNavBarColor">
+    <nav class="navBar" @scroll="changeNavBarColorAndState">
         <ul class="mobileNavigation">
             <li class="mNavItem" id="liMenu">
                 <button class="btnMenu" @click="mobileMenuShown = !mobileMenuShown">
@@ -36,7 +41,8 @@ function changeNavBarColor(): void {
             </li>
             <li class="mNavItem" id="liPageTitle"><span class="pageTitle">Portfolio</span></li>
         </ul>
-        <ul class="navList" v-if="mobileMenuShown">
+
+        <ul class="navList">
             <li class="navItem" v-for="link in props.links" :key="link.id">
                 <a @click="scrollToRef(link.refSection)">{{ link.displayText }}</a>
             </li>
@@ -53,6 +59,7 @@ nav.navBar {
     min-height: 0;
     top: 0;
     background-color: v-bind(navBarBgColor);
+    transition: background-color 0.6s;
 }
 
 ul.navList {
@@ -83,6 +90,7 @@ li.navItem a {
 /* Styling for mobile menu */
 
 ul.mobileNavigation {
+    display: none;
     width: 100dvw;
     height: fit-content;
     padding: 0;
@@ -94,7 +102,7 @@ li.mNavItem {
 }
 
 li#liMenu {
-    margin-left: 2rem;
+    margin-left: 1rem;
     vertical-align: middle;
 }
 
@@ -106,7 +114,7 @@ li#liPageTitle {
 
 span.hLine {
     display: block;
-    height: 5px;
+    height: 4px;
     width: 36px;
     margin-bottom: 6px;
     background-color: #000000;
@@ -123,6 +131,14 @@ button.btnMenu {
 
 /* CHANGES specific to mobile */
 @media only screen and (max-width: 800px) {
+
+    ul.mobileNavigation {
+        display: block;
+    }
+
+    ul.navList {
+        display: v-bind(mobileMenuDisplay);
+    }
 
     li.navItem {
         display: block;
