@@ -14,10 +14,6 @@ onMounted(() => {
     ];
 });
 
-defineExpose<{
-    refExperienceSection: Readonly<ShallowRef<HTMLDivElement | null>>;
-}>();
-
 
 const refIntroSection = useTemplateRef("introSection");
 const refExperienceSection = useTemplateRef("experienceSection");

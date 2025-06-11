@@ -10,9 +10,7 @@ import { RouterView } from 'vue-router'
     </div>
   </header>
 
-  <RouterView v-slot="{ Component }">
-    <component :is="Component" ref="rviewComponent"/>
-  </RouterView>
+  <RouterView />
 </template>
 
 <style scoped>
