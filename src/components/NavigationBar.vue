@@ -3,6 +3,9 @@ import type { SecLink } from '@/interfaces/interfaces'
 import { scrollToRef } from '@/common/utils';
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
+const SCROLL_THRESHOLD = 36;
+const NAVBAR_SHADOW_CSS = "0px 2px 6px #6e6e6e"
+
 const props = defineProps<{
     links: SecLink[]
 }>();
@@ -16,12 +19,13 @@ onBeforeUnmount(() => {
 });
 
 const navBarBgColor = ref("#ffffff");
+const navBarShadow = ref("");
 
 const mobileMenuShown = ref(false);
 const mobileMenuDisplay = computed(() => mobileMenuShown.value ? "block" : "none");
 
 function changeNavBarColorAndState(): void {
-    navBarBgColor.value = window.scrollY <= 16 ? "#ffffff" : "#f5f5f5";
+    navBarShadow.value = window.scrollY <= SCROLL_THRESHOLD ? "" : NAVBAR_SHADOW_CSS;
 
     if (mobileMenuShown.value) {
         mobileMenuShown.value = false;
@@ -59,7 +63,9 @@ nav.navBar {
     min-height: 0;
     top: 0;
     background-color: v-bind(navBarBgColor);
-    transition: background-color 0.6s;
+    transition: box-shadow 0.2s;
+    /* box-shadow: 0px 2px 3px #6e6e6e; */
+    box-shadow: v-bind(navBarShadow);
 }
 
 ul.navList {
