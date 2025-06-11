@@ -40,7 +40,7 @@ onMounted(() => {
 
 div.introCard {
     padding: 5dvh;
-    background-color: #ffffff;
+   
     min-height: 85dvh;
 }
 

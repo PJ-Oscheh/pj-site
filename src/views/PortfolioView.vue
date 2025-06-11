@@ -144,6 +144,8 @@ const contactLinks : ContactInfo[] = [
         </ExperienceCard>
     </div>
 
+    <div class="divider"></div>
+
     <div ref="educationSection" class="portfolioEducation">
         
         <h1 class="sectionHeader">Education</h1>
@@ -155,7 +157,7 @@ const contactLinks : ContactInfo[] = [
             2025 with a major in Software Engineering and a minor in Asian Studies.
         </p>
         </ExperienceCard>
-        
+
         <h2 class="subsectionHeader clickable" 
         @click="isShowingAdditionalEducation = !isShowingAdditionalEducation">
             {{ isShowingAdditionalEducation ? '▾' : '▸' }} Additional Education
@@ -191,17 +193,18 @@ const contactLinks : ContactInfo[] = [
 
 /* Section Styling */
 div.portfolioIntro {
-    margin-top: 120px;
+    background-color: #ffffff;
+    padding-top: 120px;
 }
 
 div.portfolioExperience {
     padding: 2rem;
-    background-color: #f9f9f9;
     overflow: auto;
 }
 
 div.portfolioEducation {
     padding: 2rem;
+    overflow: auto;
 }
 
 div.portfolioContact {
@@ -231,6 +234,17 @@ h2.clickable {
 
 h2.clickable:hover {
     color: var(--accent);
+}
+
+/* Divider Styling */
+
+div.divider {
+    width: 80%;
+    height: 3px;
+    background-color: var(--accent);
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 /* id-based overrides */
