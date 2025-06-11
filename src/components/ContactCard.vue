@@ -16,7 +16,7 @@ const props = defineProps<{
                 <a class="clickLink" :href="item.clickLink">
                     {{ item.displayText }}
                 </a>
-                
+
                 <!-- Divider between links - don't show for last element-->
                 <span class="clickLinkDivider" v-if="item.id < props.contactItems.length-1">|</span>
             </li>
@@ -54,6 +54,16 @@ a.clickLink {
 span.clickLinkDivider {
     margin-left: 0.5rem;
     margin-right: 0.25rem;
+}
+
+@media only screen and (max-width: 800px) {
+    ul.ccList > li {
+        display: block;
+    }
+
+    span.clickLinkDivider {
+        display: none;
+    }
 }
 
 </style>
