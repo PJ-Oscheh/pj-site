@@ -1,10 +1,12 @@
+@import url(./zain_font.css);
+
 :root {
   --accent: #005dce;
   --accent-shadow: #00142c;
 }
 
 html, body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Zain', 'Sans';
   margin: 0px;
   padding: 0px;
   background-color: #f9f9f9;

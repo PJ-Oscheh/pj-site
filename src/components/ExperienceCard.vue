@@ -46,11 +46,13 @@ div.experienceInfo {
 
 h1.employerName {
     margin: 6px;
+    font-size: 2.5em;
 }
 
 h2.jobTitle {
     color: var(--accent);
     margin: 6px;
+    font-size: 2em;
 }
 
 span.workLocation {
@@ -65,6 +67,7 @@ span.divider {
 
 span.workLocation, span.dateOfEmployment, span.divider {
     color: #5e5e5e;
+    font-size: 1.3em;
 }
 
 :slotted(ul.ecList) {
@@ -74,6 +77,11 @@ span.workLocation, span.dateOfEmployment, span.divider {
 
 :slotted(ul.ecList li) {
     margin: 0px;
+    font-size: 1.5em;
+}
+
+:slotted(p.ecParagraph) {
+    font-size: 1.5em;
 }
 
 </style>

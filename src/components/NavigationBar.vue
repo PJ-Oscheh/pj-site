@@ -89,8 +89,9 @@ li.navItem a {
     display: block;
     text-decoration: none;
     color: var(--accent);
+    font-size: 1.4em;
     font-weight: bold;
-    padding: 36px;
+    padding: 28px;
 }
 
 /* Styling for mobile menu */
@@ -115,7 +116,7 @@ li#liMenu {
 li#liPageTitle {
     margin-left: 0.5rem;
     vertical-align: middle;
-    font-size: 18pt;
+    font-size: 1.7em;
 }
 
 span.hLine {

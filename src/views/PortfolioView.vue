@@ -166,7 +166,7 @@ const contactLinks : ContactInfo[] = [
             <ExperienceCard employer="Kansai Gaidai University"
         location="Online"
         dateOfEmployment="June 2024 - July 2024">
-            <p>During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part
+            <p class="ecParagraph">During Summer 2024, I took Japanese 1 online with Kansai Gaidai University as part
                 of my Asian Studies minor.
             </p>
         </ExperienceCard>
@@ -194,7 +194,8 @@ const contactLinks : ContactInfo[] = [
 /* Section Styling */
 div.portfolioIntro {
     background-color: #ffffff;
-    padding-top: 120px;
+    padding-top: 2.5rem;
+    min-height: 100dvh;
 }
 
 div.portfolioExperience {
@@ -217,7 +218,7 @@ div.portfolioContact {
 
 h1.sectionHeader {
     text-align: center;
-    font-size: 36pt;
+    font-size: 5em;
 }
 
 h2.subsectionHeader {

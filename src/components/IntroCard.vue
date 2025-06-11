@@ -40,20 +40,19 @@ onMounted(() => {
 
 div.introCard {
     padding: 5dvh;
-    min-height: 85dvh;
 }
 
 h1.headline {
     margin: 0px;
     color: #000000;
     text-align: center;
-    font-size: 36pt;
+    font-size: 5em;
 }
 
 div.introContent {
     color: #000000;
     text-align: center;
-    font-size: 18pt;
+    font-size: 1.6em;
 }
 
 div.divider {
@@ -72,7 +71,7 @@ img.headshotPhoto {
     margin-left: auto;
     margin-right: auto;
     margin-top: 48px;
-    max-width: 28dvw;
+    max-width: 26dvw;
     min-width: 300px;
     border-radius: 100%;
     box-shadow: 0px 0px 12px #868686;
@@ -90,7 +89,8 @@ button.btnScroll {
     border-radius: 6px;
     box-shadow: 0px 3px var(--accent-shadow);
     font-weight: bold;
-    font-size: 12pt;
+    font-size: 1.3em;
+    font-family: 'Zain';
 }
 
 button.btnScroll:active {

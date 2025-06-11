@@ -44,7 +44,7 @@ ul.ccList {
 
 ul.ccList > li {
     display: inline-block;
-    font-size: 14pt;
+    font-size: 1.6em;
 }
 
 a.clickLink {
