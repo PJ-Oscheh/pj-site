@@ -19,8 +19,6 @@ onMounted(() => {
     }
 });
 
-
-
 </script>
 
 <template>
@@ -32,7 +30,9 @@ onMounted(() => {
         </div>
         <img class="headshotPhoto" :src="photo" />
 
-        <button class="btnScroll" @click="scrollToRef(experienceSection)">{{ btnScrollText }} -></button>
+        <button class="btnScroll" @click="scrollToRef(experienceSection)">
+            {{ btnScrollText }} &rarr;
+        </button>
     </div>
 </template>
 
@@ -89,8 +89,7 @@ button.btnScroll {
     border-radius: 6px;
     box-shadow: 0px 3px var(--accent-shadow);
     font-weight: bold;
-    font-size: 1.3em;
-    font-family: 'Zain';
+    font-size: 1.1em;
 }
 
 button.btnScroll:active {
@@ -98,5 +97,8 @@ button.btnScroll:active {
     box-shadow: none;
 }
 
+span#btnScrollText {
+    font-family: "Zain";
+}
 
 </style>
