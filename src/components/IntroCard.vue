@@ -73,7 +73,8 @@ img.headshotPhoto {
     margin-left: auto;
     margin-right: auto;
     margin-top: 48px;
-    height: 400px;
+    max-width: 28dvw;
+    min-width: 300px;
     border-radius: 100%;
     box-shadow: 0px 0px 12px #868686;
 }

@@ -195,9 +195,13 @@ div.portfolioIntro {
 }
 
 div.portfolioExperience {
-    padding: 24px;
+    padding: 2rem;
     background-color: #f9f9f9;
     overflow: auto;
+}
+
+div.portfolioEducation {
+    padding: 2rem;
 }
 
 div.portfolioContact {
