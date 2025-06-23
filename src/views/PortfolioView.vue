@@ -4,7 +4,7 @@ import ExperienceCard from "@/components/ExperienceCard.vue";
 import IntroCard from "@/components/IntroCard.vue";
 import NavigationBar from '@/components/NavigationBar.vue';
 import type { SecLink, ContactInfo } from "@/interfaces/interfaces";
-import { onMounted, ref, useTemplateRef, type Ref, type ShallowRef } from "vue";
+import { onMounted, ref, useTemplateRef, type Ref } from "vue";
 
 onMounted(() => {
     links.value = [
@@ -62,7 +62,7 @@ const contactLinks : ContactInfo[] = [
 
     <div ref="introSection" class="portfolioIntro">
         <IntroCard headline="Welcome to my site!" 
-        photo="../../public/pj.jpg" 
+        photo="../../pj.jpg" 
         nextRef="experienceSection"
         btnScrollText="See My Experience">
                 Hey there! I'm PJ Oschmann, a recent graduate of Baldwin Wallace University and an
